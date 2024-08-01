@@ -8,6 +8,9 @@ ENV FLASK_RUN_HOST=0.0.0.0
 # Set the working directory in the container
 WORKDIR /app
 
+# Create the uploads directory
+RUN mkdir -p /app/uploads
+
 # Copy the requirements file into the container
 COPY requirements.txt requirements.txt
 
