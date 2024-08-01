@@ -1,9 +1,14 @@
 from flask import Flask, request, jsonify
 from config import Config, allowed_file
+from utils.signal_processing import extract_ppg_signal, load_model, predict_blood_pressure
 import os
 
 app = Flask(__name__)
 app.config.from_object(Config)
+
+# Update model path to reflect the new directory
+model_path = os.path.join('pretrained_model', 'unet1.tflite')
+model = load_model(model_path)
 
 @app.route('/')
 def home():
@@ -20,12 +25,19 @@ def upload_video():
         filename = video_file.filename
         file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
         video_file.save(file_path)
-        return jsonify({'message': 'Video uploaded successfully', 'file_path': file_path})
+        
+        # Extract PPG signal
+        normalized_signal = extract_ppg_signal(file_path)
+        
+        # Make predictions
+        sbp, dbp = predict_blood_pressure(normalized_signal, model)
+
+        # Delete the video file after processing
+        os.remove(file_path)
+        
+        return jsonify({'message': 'Video uploaded and processed', 'sbp': sbp, 'dbp': dbp})
     else:
         return jsonify({'error': 'File type not allowed'}), 400
 
 if __name__ == '__main__':
-    # Ensure the upload folder exists
-    if not os.path.exists(app.config['UPLOAD_FOLDER']):
-        os.makedirs(app.config['UPLOAD_FOLDER'])
     app.run(debug=True)
