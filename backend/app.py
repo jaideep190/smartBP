@@ -6,8 +6,8 @@ import os
 app = Flask(__name__)
 app.config.from_object(Config)
 
-# Update model path to reflect the new directory
-model_path = os.path.join('pretrained_model', 'unet1.tflite')
+# Ensure the model path reflects the correct directory
+model_path = 'unet1.tflite'
 model = load_model(model_path)
 
 @app.route('/')
