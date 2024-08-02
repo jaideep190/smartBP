@@ -33,7 +33,7 @@ def upload_video():
         sbp, dbp = predict_blood_pressure(normalized_signal, model)
 
         # Delete the video file after processing
-        os.remove(file_path)
+        # os.remove(file_path)
         
         return jsonify({'message': 'Video uploaded and processed', 'sbp': sbp, 'dbp': dbp})
     else:
