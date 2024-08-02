@@ -2,7 +2,7 @@ import os
 
 class Config:
     SECRET_KEY = os.getenv('SECRET_KEY', 'default_secret_key')
-    UPLOAD_FOLDER = 'static/uploads'
+    UPLOAD_FOLDER = '/tmp/uploads'  # Changed to use /tmp
     ALLOWED_EXTENSIONS = {'mp4', 'avi', 'mov'}
 
 def allowed_file(filename):
