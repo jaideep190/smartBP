@@ -40,6 +40,10 @@ SmartBP Backend is a cutting-edge Flask-based web service that leverages the pow
   </table>
 </div>
 
+## <img src="https://media.giphy.com/media/WUlplcMpOCEmTGBtBW/giphy.gif" width="30"> Deployment
+
+Explore the live application at our [**deployment link**](https://smartbp-backend.onrender.com)!
+
 ## 🛠 Tech Stack
 
 <div align="center">
