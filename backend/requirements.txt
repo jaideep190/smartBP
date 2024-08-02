@@ -4,3 +4,4 @@ tensorflow
 numpy
 scipy
 opencv-python-headless
+flask-cors
