@@ -34,7 +34,7 @@
   </table>
 </div>
 
-## 🛠 Tech Stack
+## 🛠 Tech-Stack
 
 <div align="center">
   <img src="https://www.vectorlogo.zone/logos/tensorflow/tensorflow-icon.svg" alt="tensorflow" width="40" height="40"/>
