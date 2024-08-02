@@ -39,4 +39,5 @@ def upload_video():
     else:
         return jsonify({'error': 'File type not allowed'}), 400
 
-
+if __name__ == '__main__':
+    app.run(debug=True)
