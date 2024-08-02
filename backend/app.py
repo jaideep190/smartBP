@@ -1,11 +1,13 @@
 import os
 import uuid
 from flask import Flask, request, jsonify
+from flask_cors import CORS, cross_origin
 from werkzeug.utils import secure_filename
 from config import Config, allowed_file
 from utils.signal_processing import extract_ppg_signal, load_model, predict_blood_pressure
 
 app = Flask(__name__)
+CORS(app)
 app.config.from_object(Config)
 
 # Ensure the model path reflects the correct directory
