@@ -13,10 +13,6 @@
   [Features](#-features) • [Tech Stack](#-tech-stack) • [Installation](#-installation) • [API](#-api) • [Deployment](#-deployment)
 </div>
 
-<div align="center">
-  <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNjM3YjM5MzMyYTM1MzBkMzM4ZDUyZDM4ZjI5ZjM4ZWNhOWNjOThjNyZjdD1n/3o7TKSjRrfIPjeiVyM/giphy.gif" alt="AI-powered medical analysis" width="600px" />
-</div>
-
 ## 🔍 Overview
 
 SmartBP Backend is a cutting-edge Flask-based web service that leverages the power of AI to revolutionize blood pressure monitoring. By processing video files containing Photoplethysmography (PPG) signals, our service predicts accurate blood pressure readings, making it an essential component of the SmartBP ecosystem.
